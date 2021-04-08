@@ -1,0 +1,5 @@
+<ul class="recipes-tags">
+    {{ range .Site.Taxonomies.tags }}
+            <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}<span>{{ .Count }}</span></a></li>
+    {{ end }}
+</ul>

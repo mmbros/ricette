@@ -1,0 +1,9 @@
+
+
+@mixin tags() {
+    @include inline-list($gap: $tags-gap, $justify-content: center); 
+    // @include inline-list($gap: $tags-gap); 
+    a {
+        @include link-badge();
+    }
+}

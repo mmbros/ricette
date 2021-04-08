@@ -1,0 +1,68 @@
+.recipe {
+    // background-color: beige;
+
+    margin: $recipe-padding;
+
+    max-width: $recipe-max-width;
+    color: $color-text;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    &__title {
+        color: $color-accent;
+        font-size: 3rem;
+    }
+
+    &__description {
+        color: $color-text-dark;
+
+    }
+
+    h2 {
+        margin-top: 1rem;
+        color: $color-accent;
+    }
+
+    &__info, &__ingredients {
+        margin-left: 1rem;
+        list-style: disc;
+        // list-style-position: outside; 
+
+        // strong {
+        //     color: $color-text-dark;
+        // }
+    }
+
+    &__instructions {
+        margin-left: 1rem;
+        // list-style-type: decimal;
+        // list-style-position: outside;
+
+        color:  $color-accent; 
+        
+        li:not(:first-child) {
+            margin-top: 0.5rem;
+        }
+        strong {
+            color: $color-text-dark;
+        }
+        p {
+            color: $color-text;
+        }
+
+    }
+
+    &__tags {
+        margin-top: 1ex;
+        font-size: 80%;
+        padding: 0;
+        @include inline-list($gap: 1.5ex 1ex); 
+        a {
+            @include link-badge();
+        }
+    }
+
+}

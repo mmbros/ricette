@@ -1,0 +1,80 @@
+{{ define "main" }}
+{{ $prefix := "recipe"}}
+
+<main>
+{{ partial "breadcrumb.html" . }}
+
+
+<section class="{{$prefix}}">
+
+
+
+{{- with .Resources.GetMatch "image-header" -}}
+
+<img src="{{ .RelPermalink }}" alt="{{ $.Title }}" />
+{{ partial "image-credits.html" . }}
+
+{{- else -}}
+{{-   with .Resources.ByType "image" -}}
+{{- $img := index . 0 -}}
+{{/* {{- $img := $img.Fill "800x400" -}} */}}
+<img src="{{ $img.RelPermalink }}" title="{{ $.Name }}" />
+{{-   end }}
+{{- end }}
+
+<h1 class="{{$prefix}}__title">{{ .Title }}</h1>
+{{ with .Params.description }}
+<div class="{{$prefix}}__description">{{.}}</div>
+{{ end }}
+
+
+{{ with (.GetTerms "tags") }}
+<ul class="{{ $prefix }}__tags">
+{{ range . }}
+<li><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
+{{ end }}
+</ul>
+{{ end -}}
+
+
+
+<h2>Informazioni</h2>
+
+<ul class="{{$prefix}}__info">
+{{ with .Params.prepTime -}}
+  <li>Tempo di preparazione: {{- partial "period.html" . -}}</li>
+{{ end -}}
+{{ with .Params.cookTime -}}
+  <li>Tempo di cottura: {{- partial "period.html" . -}}</li>
+{{ end -}}
+{{ with .Params.totalTime -}}
+  <li>Tempo totale: {{- partial "period.html" . -}}</li>
+{{ end -}}
+{{ with .Params.yield -}}
+  <li>Dosi per: {{.}} persone</li>
+{{ end -}}
+</ul>
+
+{{ with .Params.ingredients }}
+<h2>Ingredienti</h2>
+<ul class="{{$prefix}}__ingredients">
+  {{ range . }}
+    <li>{{ . | markdownify}}</li>
+  {{ end }}
+</ul>
+{{ end }}
+ 
+{{ with .Params.instructions }}
+<h2>Indicazioni</h2>
+<ol class="{{$prefix}}__instructions">
+  {{ range . }}
+    <li><strong>{{ .name }}</strong><p>{{ .text }}</p></li>
+  {{ end }}
+</ol>
+{{ end }}
+
+
+
+</section>
+</main>
+{{ end }}

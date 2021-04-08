@@ -1,0 +1,22 @@
+{{ define "main" }}
+<main>
+<!-- breadcrumb -->
+{{ partial "breadcrumb.html" . }}
+
+
+
+
+<!-- recipes number  -->
+{{ $pages := (cond .IsHome .Site.RegularPages .RegularPagesRecursive ) }}
+{{ $tot := (len $pages)}}
+<div class="recipes-number">{{$tot}} {{cond (eq $tot 1) "ricetta" "ricette"}}</div>
+
+{{ $paginator := .Paginate $pages }}
+{{ template "_internal/pagination.html" . }}
+
+
+<!-- recipes lis  -->
+{{- partial "recipes/list" $paginator.Pages -}}
+
+</main>
+{{ end }}

@@ -1,0 +1,28 @@
+baseURL = "http://ricette.it/"
+
+buildDrafts = false
+
+languageCode = "it"
+defaultContentLanguage = "it"
+
+title = "Ricettario della casa"
+
+theme = "ricettario2"
+
+pluralizeListTitles = false
+
+paginate = 2
+
+[params]
+
+[params.html]
+
+description = "Sito delle ricette della famiglia"
+
+breadcrumbHome = "Ricette"
+
+
+[taxonomies]
+  tagsaaaa = "tags"
+  # cousine = "cucina"
+

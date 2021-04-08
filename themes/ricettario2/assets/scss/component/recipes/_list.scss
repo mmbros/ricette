@@ -1,0 +1,98 @@
+
+/*
+.recipes-list
+  __item
+    __image
+    __info
+      __title
+      __description
+      __duration
+      __rating
+      __tags
+*/
+
+
+.recipes-list {
+    $dy: $pady;
+    $item-gutter: 1ex;
+
+    list-style: none;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: $recipes-list-gap;
+
+    // background-color: darkmagenta;
+
+    &__item {
+        // background-color: orange;
+
+        // margin: 1ex 0;
+        padding: $recipes-list-item-padding;
+
+        display: flex;
+        align-items: flex-start;
+
+        flex: 1 40%;
+
+        &:hover {
+            background-color: $color-accent-light;
+        }
+    }
+    
+
+    &__image {
+        // padding: 0;
+        margin: 0 $item-gutter 0 0;
+        // avoid the extra bottom space
+        line-height: 0;
+        // background-color: blue;
+        
+        img {
+            padding: 0;
+            margin: 0;
+            border: 3px solid $color-accent;
+        }
+    }
+
+    &__title {
+        // margin: 0 0 $dy 0;
+        margin: 0;
+        a {
+            @include link-underlined();
+        }
+    }
+    &__description {
+        color:gray;
+        font-size: 100%;
+    }
+
+    &__category {
+        margin-top: 2ex;
+        &::before {
+            font-size: 70%;
+            color: gray;
+            content: "Categoria: ";
+        }
+    }
+    &__duration {
+        &::before {
+            font-size: 70%;
+            color: gray;
+            content: "Tempo totale: ";
+        }
+    }
+    // &__rating {
+    // }
+    &__tags {
+        font-size: 80%;
+        padding: 0;
+        @include inline-list($gap: 1.5ex 1ex); 
+        a {
+            @include link-badge();
+        }
+    }
+
+
+}

@@ -1,0 +1,55 @@
+.pagination {
+    display: flex;
+}
+
+
+.page-link {
+    padding: 0 $padx-sm;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        background-color: $color-accent-light;
+    }
+}
+.page-item {
+    color: $color-text-dark;
+    &.active {
+        color: $color-accent;
+    }
+    &.disabled {
+        color: $color-text-light;
+
+        .page-link {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+// <ul class="pagination">
+    
+//     <li class="page-item">
+//         <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">««</span></a>
+//     </li>
+    
+//     <li class="page-item disabled">
+//     <a class="page-link" aria-label="Previous"><span aria-hidden="true">«</span></a>
+//     </li>
+    
+//     <li class="page-item active"><a class="page-link" href="/">1</a></li>
+    
+//     <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+//     <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+//     <li class="page-item">
+//     <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">»</span></a>
+//     </li>
+    
+//     <li class="page-item">
+//         <a href="/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">»»</span></a>
+//     </li>
+    
+// </ul>

@@ -1,0 +1,3 @@
+{{- range findRE "^PT.*?([0-9]+)[Hh].*$" . 1 }}{{ replaceRE "^PT.*?([0-9]+)[Hh].*$" " $1 h" .}}{{ end -}}
+{{- range findRE "^PT.*?([0-9]+)[Mm].*$" . 1 }}{{ replaceRE "^PT.*?([0-9]+)[Mm].*$" " $1 min" .}}{{ end -}}
+{{- range findRE "^PT.*?([0-9]+)[Ss].*$" . 1 }}{{ replaceRE "^PT.*?([0-9]+)[Ss].*$" " $1 sec" . }}{{ end -}}
