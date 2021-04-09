@@ -1,5 +1,10 @@
-name: CI
-on: push
+name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+
 jobs:
   deploy:
     runs-on: ubuntu-18.04
