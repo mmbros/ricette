@@ -3,9 +3,8 @@ title: "Farinata di Ceci"
 description: La farinata di ceci è una specialità ligure, tipica in particolar modo della città di Genova.
 
 date: 2021-04-01T19:02:49+02:00
-draft: true
+draft: false
 
-cuisine: italiana
 tags: 
 - forno
 
