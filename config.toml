@@ -1,4 +1,4 @@
-baseURL = "http://ricette.it/"
+baseURL = "https://mmbros.github.io/ricette/"
 
 buildDrafts = false
 
