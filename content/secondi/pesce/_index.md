@@ -1,4 +1,4 @@
 ---
-title: Pasta
+title: Pesce
 weight: 11
 ---

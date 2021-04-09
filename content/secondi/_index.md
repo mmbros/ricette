@@ -1,4 +1,4 @@
 ---
-title: Pesce
+title: Secondi piatti
 weight: 20
 ---
