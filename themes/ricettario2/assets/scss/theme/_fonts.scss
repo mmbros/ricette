@@ -1,0 +1,8 @@
+$fontfamilyHand: GochiHand;
+
+$fontfamilyHtml: $fontfamilyHand, Comic, Arial, Helvetica, sans-serif;
+
+@font-face {
+    font-family: $fontfamilyHand;
+    src: url("/ricette/fonts/Gochi_Hand/GochiHand-Regular.ttf");
+}

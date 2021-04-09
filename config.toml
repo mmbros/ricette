@@ -1,3 +1,5 @@
+# in case of change of baseURL must update fonts source URL 
+# of "themes/ricettario2/assets/scss/theme/_fonts.scss"
 baseURL = "https://mmbros.github.io/ricette/"
 
 buildDrafts = false
