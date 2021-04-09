@@ -1,6 +1,6 @@
 ---
-title: Chili con Carne
-description: Descrizione della Chili Con Carne
+title: Chili con carne
+description: Il classico piatto della cucina tex-mex.
 
 date: 2021-04-09T23:18:26+02:00
 draft: false
