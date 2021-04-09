@@ -1,3 +1,7 @@
+@font-face {
+  font-family: GochiHand;
+  src: url("/ricette/fonts/Gochi_Hand/GochiHand-Regular.ttf"); }
+
 *,
 *::before,
 *::after {
@@ -172,10 +176,6 @@ a:focus-visible {
         font-size: 80%;
         margin-left: 0.8rem;
         color: rgba(0, 0, 0, 0.5); }
-
-@font-face {
-  font-family: GochiHand;
-  src: url("/ricette/fonts/Gochi_Hand/GochiHand-Regular.ttf"); }
 
 html {
   color: black;
