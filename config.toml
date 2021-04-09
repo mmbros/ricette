@@ -13,7 +13,7 @@ theme = "ricettario2"
 
 pluralizeListTitles = false
 
-paginate = 2
+paginate = 10
 
 [params]
 
