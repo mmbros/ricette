@@ -1,0 +1,42 @@
+$padx: 1rem;
+$pady: 1rem;
+$pad: $pady $padx;
+
+$badge-radius: 0.8rem;
+$badge-padx: 0.6rem;
+$badge-pady: 0.25*$badge-padx;
+$badge-padding: $badge-pady $badge-padx;
+
+
+$tags-gap: 2*$badge-pady $badge-padx;
+
+$padx-sm: .5rem;
+$pady-sm: $padx-sm;
+$pad-sm: $pady-sm $padx-sm;
+
+
+$recipes-list-item-padding: $pad-sm;
+$recipes-list-row-gap:      0.2rem;
+$recipes-list-column-gap:   $recipes-list-row-gap;
+$recipes-list-gap:          $recipes-list-row-gap $recipes-list-column-gap;
+
+$breadcrumb-margin: $pady 0 0 $padx-sm;
+
+$recipe-max-width: 70ex;
+$recipe-padding: 0 0 $pady $padx-sm;
+
+
+
+
+
+// $gutter-sec-h: 0.5rem;
+// $gutter-sec-v: 0.5rem;
+
+// $sec-pad: $gutter-sec-v $gutter-sec-h;
+
+// $padx: 1rem;
+// $pady: 1rem;
+// $pad: $pady $padx;
+
+// $item-gutter: 0.5rem;
+// $item-gutter-sm: 0.5rem;

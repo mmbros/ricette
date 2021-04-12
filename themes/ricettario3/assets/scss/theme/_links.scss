@@ -1,0 +1,59 @@
+// https://sharkcoder.com/visual/underline
+
+@mixin link-underlined() {
+    color: $color-text-dark;
+    text-decoration-color: $color-accent;
+
+    &:hover {
+        color: $color-accent;
+    }
+}
+@mixin link-underlined-gradient() {
+    color: $color-fg;
+
+    text-decoration: none;
+    background:  no-repeat 0 100%;
+    background-image: linear-gradient($color-accent, $color-accent);
+    background-size: 0% 2px;
+    transition: background-size .3s ease;
+
+
+    &:hover, &:focus {
+        background-size: 100% 2px;
+    }
+}
+
+
+
+
+@mixin link-badge() {
+    background-color: $color-accent;
+    border-radius: $badge-radius;
+    color: white;
+    padding: $badge-padding;
+    text-decoration: none;
+    &:hover {
+        color: black;
+    }
+
+    display: inline-block;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25ch;
+
+
+    // display: block;
+    span {
+        font-size: 80%;
+        // padding:0 2px;
+        // color:  transparent;
+        // lighting-color: violet;
+        // background-color: $color-accent-light;
+        // padding: 0 .5ex;
+        margin-left: 0.5rem;
+        color: rgba(0,0,0,0.5);
+        // border-radius: 2ex;
+    }
+}

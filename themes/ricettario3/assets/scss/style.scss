@@ -1,0 +1,109 @@
+@import "theme/fonts";
+@import "theme/colors";
+@import "theme/dimensions";
+@import "theme/links";
+
+@import "base/reset";
+
+@import "layout/grid";
+@import "layout/media-query";
+
+@import "component/inline-list";
+@import "component/breadcrumb";
+@import "component/pagination";
+@import "component/image-credits";
+
+@import "component/recipes/sections";
+@import "component/recipes/tags";
+// @import "component/recipes/list";
+@import "component/recipes/card";
+@import "component/recipes/single";
+
+
+html {
+    color: $color-fg;
+    background-color: $color-bg;
+    font-family: $fontfamilyHtml;
+}
+
+
+body {
+    @include l_container();
+}
+
+
+header {
+    @include l_header();
+    background-color: $color-accent;
+    padding: $pad;
+}
+.site-title {
+    a {
+        text-decoration: none;
+        color: $color-bg;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+nav {
+    // b ackground-color: rgb(255,224,224);
+
+    @include l_nav();
+
+    display: grid;
+    align-items: start;
+    align-content: start; 
+    // gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(30ex, 1fr));
+
+
+}
+.recipes-sections {
+    // background-color: rgb(224,255,224);
+    // @include l_sections();
+    // background-color: aquamarine;
+
+    @include sections();
+
+}
+
+.recipes-tags {
+    // background-color: rgb(224, 224,255);
+    padding: $pady 0;
+    // @include l_tags();
+    // background-color: yellowgreen;
+
+    @include tags();
+}
+
+main {
+    @include l_main();
+    // background-color: whitesmoke;
+    // padding-inline-start: 1rem;
+}
+
+footer {
+    @include l_footer();
+    // background-color: orangered;
+    background-color: $color-accent;
+    color: $color-bg;
+    padding: $pad;
+}
+
+
+.breadcrumb {
+    @include breadcrumb(); 
+}
+
+@include media-query(large) {
+    body {
+        @include l_container(large);
+    }
+}
+
+.recipes-number {
+    padding-inline-start: $padx-sm;
+}

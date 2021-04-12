@@ -1,0 +1,47 @@
+$radius: 0.8rem;
+$pad-sec-link:  0.6rem;
+
+@mixin sections() {
+    // to compensate the padding of <a> elements
+    // position: relative;
+    // left: -$radius;
+
+    // background-color: whitesmoke;
+
+    font-size: 1.25rem;
+    padding: $pady 0 $pady ($padx - $pad-sec-link);
+
+    list-style: none;
+
+    li {
+        // margin-bottom: $radius;
+        // background-color: bisque;
+
+        ul {
+            padding-left: 2rem;
+        }
+
+    }
+
+    a {
+        @include link-underlined();
+        border-radius: $radius;
+        padding: 2px $pad-sec-link 0px $pad-sec-link;
+        white-space: nowrap;
+        // display: block;
+    }
+    .selected {
+        background-color: $color-accent-light;          
+    }
+    img {
+        padding-inline-end: 0.5ex;
+        position: relative;
+        top: 6px;
+        // filter: grayscale(1);
+        // filter: hue-rotate(260deg);
+        // filter: brightness(0.7) sepia(1) hue-rotate(260deg) saturate(2);
+
+        width: 24px;
+        height: 24px;
+    }
+}

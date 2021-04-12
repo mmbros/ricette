@@ -1,0 +1,44 @@
+{{/*
+    Output all the sections of the Site
+
+    INPUT: the current page 
+*/}}
+<ul class="recipes-sections">
+{{ $selected := .CurrentSection }}
+{{- range $.Site.Sections.ByWeight }}
+{{ template "recipes-sections-item" (dict "current" . "selected" $selected) -}}
+{{- end }}
+</ul><!-- .recipes-sections -->
+
+
+{{/*
+    INPUT: a dict with two keys: current and selected section
+
+        (dict 
+            "current"   the current section
+            "selected"  the selected section
+        )
+
+*/}}
+{{- define "recipes-sections-item" -}}
+
+{{- if .current.RegularPagesRecursive -}}{{/* skip empty sections */}}
+
+<li>
+<a href="{{ .current.RelPermalink }}"{{ if eq .current .selected }} class="selected"{{ end }}>
+    {{- with .current.Resources.GetMatch "*.svg" -}}
+    <img src="{{ .RelPermalink }}" title="icon" width="24px" height="24px" />
+    {{- end -}}
+    {{- .current.Title -}}
+  </a>
+{{-   with .current.Sections }}{{/* sub sections */}}
+<ul> 
+{{-    range .ByWeight -}}
+{{-      template "recipes-sections-item" (dict "current" . "selected" $.selected) -}}
+{{-    end -}}
+</ul>
+{{-   end -}}
+</li>
+{{- end -}}{{/* skip empty secitons */}}
+
+{{- end -}}

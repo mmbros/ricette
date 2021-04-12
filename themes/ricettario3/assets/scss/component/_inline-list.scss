@@ -1,0 +1,26 @@
+/** 
+ * Show the children of the element like a list of inline items.
+ */
+@mixin inline-list($justify-content: flex-start, $gap: false) {
+    // background-color: chartreuse;
+    // margin: 0;
+    // padding: 0;
+
+    // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    display: flex;
+    flex-wrap: wrap;
+
+    @if $justify-content != flex-start {
+        justify-content: $justify-content;
+    }
+
+    @if $gap {
+        // https://css-tricks.com/almanac/properties/g/gap/
+        gap: $gap; //1.5ex 1ex;
+    }
+
+    & > * {
+        display: block;
+        flex: 0 0 auto;
+    }
+}

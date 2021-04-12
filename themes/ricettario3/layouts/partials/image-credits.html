@@ -1,0 +1,34 @@
+{{/*
+    INPUT:  the image resource
+*/}}
+{{ $prefix := "credits" }}
+{{ with .Params.credits }}
+
+<div class="{{$prefix}}">
+
+{{- if (or .source .title) -}}
+<a class="{{$prefix}}__source" target="_blank"
+{{- with .source }} href="{{ . }}"{{ end -}}
+>
+{{- or .title "Immagine" -}}
+</a>
+{{- end -}}
+
+{{ if (or .author_link .author) }}
+by <a class="{{$prefix}}__author" target="_blank"
+{{- with .author_link }} href="{{ . }}"{{ end -}}
+>
+{{- or .author "Autore" -}}
+</a>
+{{- end -}}
+
+{{ if (or .licence_url .licence) }}
+licensed under <a class="{{$prefix}}__licence" target="_blank"
+{{- with .licence_url }} href="{{ . }}"{{ end -}}
+>
+{{- or .licence "Licence" -}}
+</a>
+{{- end -}}
+
+</div>
+{{ end }}

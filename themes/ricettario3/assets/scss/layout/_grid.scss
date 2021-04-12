@@ -1,0 +1,60 @@
+
+
+@mixin l_container($media: small) {
+    display: grid;
+    // necessario per avere la parte centrale
+    // che occupa tutto lo spazio disponibile
+    height: 100vh;
+
+	@if $media == small {
+		//margin: 0;
+		// min-height: 100%;
+	
+		grid-gap: 0;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-areas:
+			'header'
+			'nav'
+			'main'
+			'footer';
+	}
+	// @else if $media == large {
+	@else {
+		grid-template-columns: 30ex 1fr;
+		// grid-template-columns: auto 1fr;
+		grid-template-rows: auto 1fr auto;
+		grid-template-areas:
+			'header   header'
+			'nav     main'
+			'footer   footer';
+	};
+}
+
+@mixin l_header () {
+	grid-area: header;
+}
+
+@mixin l_main () {
+	grid-area: main;
+
+	// [Prevent content from expanding grid items](https://stackoverflow.com/questions/43311943/prevent-content-from-expanding-grid-items)
+	// [Preventing a Grid Blowout](https://css-tricks.com/preventing-a-grid-blowout/)
+	min-width: 0;
+}
+
+@mixin l_footer () {
+	grid-area: footer;
+}
+
+@mixin l_nav () {
+	grid-area: nav;
+}
+
+@mixin l_tags () {
+	grid-area: tags;
+}
+
+@mixin l_sections () {
+	grid-area: sections;
+}

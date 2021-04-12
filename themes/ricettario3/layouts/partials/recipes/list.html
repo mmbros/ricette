@@ -1,0 +1,61 @@
+<ul class="recipes-list">
+{{ range . }}
+{{ block "li-recipe" . }}{{ end }}
+{{ end }}
+</ul>
+
+{{ define "li-recipe" }}
+{{ $prefix := "recipes-list" }}
+
+<li class="{{ $prefix }}__item">
+
+<div class="{{ $prefix }}__image">
+{{- with .Resources.ByType "image" -}}
+<a href="{{$.RelPermalink}}">
+{{- $img := index . 0 -}}
+{{- $img := $img.Fill "500x150" -}}
+<img src="{{ $img.RelPermalink }}" title="{{ $.Name }}" />
+</a>
+{{ else }}
+<img title="{{ $.Name }}" />
+{{- end -}}
+</div>
+
+<div class="{{ $prefix }}__info">
+
+<div class="{{ $prefix }}__category">{{ .CurrentSection.Name }}</div>
+
+<h2 class="{{ $prefix }}__title"><a href="{{.RelPermalink}}">{{.Name}}</a></h2>
+
+
+{{- with .Params.rating }}
+<div class="{{ $prefix }}__rating">{{- partial "rating.html" . -}}</div>
+{{ end }}
+
+{{- with .Params.totalTime -}}
+<time class="{{ $prefix }}__duration" datetime="{{.}}" >{{- partial "period.html" . -}}</time>
+{{- end -}}
+
+{{- with .Params.description -}}
+<div class="{{ $prefix }}__description">{{ . }}</div>
+{{- end -}}
+
+
+
+
+
+
+{{ with (.GetTerms "tags") }}
+<ul class="{{ $prefix }}__tags">
+{{ range . }}
+<li><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
+{{ end }}
+</ul>
+{{ end -}}
+
+</div>
+</li>
+{{ end }}
+
+
+

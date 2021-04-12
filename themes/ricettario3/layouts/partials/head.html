@@ -1,0 +1,21 @@
+<head>
+<meta charset="utf-8">
+<title>
+{{- if .IsHome -}}
+    {{.Site.Title}}
+{{- else -}}
+    {{.Name}} | {{.Site.Title}}
+{{- end -}}
+</title>
+{{ with .Site.Params.html.description -}}
+<meta name="description" content="{{.}}">
+{{- end }}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{/* 
+"osutputStyle" "compressed"  
+"includePaths" (slice "node_modules/myscss")
+*/}}
+{{- $options := (dict "targetPath" "css/style.css"  "enableSourceMap" true) -}}
+{{- $style := resources.Get "scss/style.scss" | resources.ToCSS $options -}}
+<link rel="stylesheet" media="all" href="{{ $style.RelPermalink }}" />
+</head>

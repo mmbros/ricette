@@ -1,0 +1,117 @@
+
+/*
+.recipes-list
+  __item
+    __image
+    __info
+      __title
+      __description
+      __duration
+      __rating
+      __tags
+*/
+
+
+.recipes-list {
+    $dy: $pady;
+    $item-gutter: 1ex;
+
+    list-style: none;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(unquote('min(100%,400px)'), 1fr));
+    gap: $recipes-list-gap;
+
+    // background-color: darkmagenta;
+
+    &__item {
+        // background-color: orange;
+
+        border: 2px solid #F2F2F2;
+        border-radius: 8px;
+        overflow: hidden;
+
+
+        // margin: 1ex 0;
+        padding: $recipes-list-item-padding;
+
+        display: grid;
+        grid-template-columns: minmax(75px, max-content) minmax(75%, 1fr);
+        gap: 3px;
+        // align-items: flex-start;
+
+        // flex: 1 40%;
+
+        &:hover {
+            background-color: $color-accent-light;
+        }
+    }
+    
+
+    &__image {
+        // padding: 0;
+        // margin: 0 $item-gutter 0 0;
+        // avoid the extra bottom space
+        line-height: 0;
+        // background-color: blue;
+
+        border: 0;
+        
+        img {
+            // resize image proportionally
+            max-width:100%;
+            height:auto;
+
+            padding: 0;
+            margin: 0;
+            
+            border: 3px solid $color-accent;
+        }
+    }
+    // &__info {
+    //     background-color: lightgreen;
+    // }
+
+    &__title {
+        // margin: 0 0 $dy 0;
+        // margin: 1ex 0;
+        a {
+            @include link-underlined();
+        }
+    }
+    &__description {
+        color:gray;
+        font-size: 100%;
+    }
+
+    &__category {
+        // margin-top: 2ex;
+        text-transform: uppercase;
+        letter-spacing: 0.125rem;
+        color: $color-accent;
+    }
+    &__duration {
+        &::before {
+            font-size: 70%;
+            color: gray;
+            content: "Tempo totale: ";
+        }
+    }
+    // &__rating {
+    // }
+    &__tags {
+        font-size: 80%;
+        padding: 0;
+        @include inline-list($gap: 1.5ex 1ex); 
+        a {
+            @include link-badge();
+        }
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+
+}
